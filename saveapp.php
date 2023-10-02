@@ -15,6 +15,17 @@
    
        file_put_contents($filename, $data1, FILE_APPEND); // FILE_APPEND يُضيف البيانات إلى الملف بدلاً من استبداله
        file_put_contents($filename, $data2, FILE_APPEND);
+
+     
+// تنفيذ git add *
+ shell_exec("git add * 2>&1");
+// تنفيذ git commit
+ shell_exec("git commit -m 'commit11' 2>&1");
+// تنفيذ git push
+shell_exec("git push -u origin main 2>&1");
+
+
+
        // حفظ البيانات في الملف
    
        echo "تم حفظ البيانات بنجاح في ملف $filename";
