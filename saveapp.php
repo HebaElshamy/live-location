@@ -6,14 +6,16 @@
     $latitude = $_POST['latitude'];
     $longitude = $_POST['longitude'];
        // اسم الملف الذي تريد حفظ البيانات فيه
-       $filename = "coordinates.txt";
-
+       $filename = "README.md";
+       file_put_contents($filename, " ");
        // البيانات التي تريد حفظها
       //  $data = "Latitude: $latitude, Longitude: $longitude";
-       $data = "https://www.google.com/maps?q={$latitude},{$longitude}";
+       $data1 = "##The students are here now\n";
+       $data2 = "https://www.google.com/maps?q={$latitude},{$longitude}\n";
    
+       file_put_contents($filename, $data1, FILE_APPEND); // FILE_APPEND يُضيف البيانات إلى الملف بدلاً من استبداله
+       file_put_contents($filename, $data2, FILE_APPEND);
        // حفظ البيانات في الملف
-       file_put_contents($filename, $data);
    
        echo "تم حفظ البيانات بنجاح في ملف $filename";
    } else {
