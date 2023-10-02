@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+    // استخدام fetch لقراءة الملف النصي
+
+
+    const fileURL = 'http://localhost/whatsapp/sharelocation/coordinates.txt';
+
+// استخدام XMLHttpRequest لقراءة الملف
+const xhr = new XMLHttpRequest();
+xhr.open('GET', fileURL, true);
+xhr.onreadystatechange = function () {
+  if (xhr.readyState === 4 && xhr.status === 200) {
+    const fileContent = xhr.responseText;
+    // القيام بمعالجة المحتوى هنا
+    console.log(fileContent);
+  }
+};
+xhr.send();
+
+
+   </script> 
+</body>
+</html>

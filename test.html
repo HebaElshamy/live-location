@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Coordinates on Map</title>
+    <style>
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Students are here now.</h1>
+    <div id="map"></div>
+
+    <script>
+        function initMap() {
+            // استخدم معلومات الإحداثيات المستلمة من الصفحة السابقة
+            var urlParams = new URLSearchParams(window.location.search);
+            var count = urlParams.get('count');
+            var latitude = urlParams.get('lat');
+            var longitude = urlParams.get('lng');
+            console.log(count)
+            var mapOptions = {
+                center: {lat: parseFloat(latitude), lng: parseFloat(longitude)},
+                zoom: 14
+            };
+            var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+
+            var marker = new google.maps.Marker({
+                position: {lat: parseFloat(latitude), lng: parseFloat(longitude)},
+                map: map,
+                title: 'My Location'
+            });
+        }
+    </script>
+    <!-- استبدل "YOUR_API_KEY" بالمفتاح الجديد الذي قدمته -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyArcG9nFVOY8izY_yqBGeZvMDYa2Cx7MEI&callback=initMap" async defer></script>
+</body>
+</html>
