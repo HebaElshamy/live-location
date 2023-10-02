@@ -10,7 +10,7 @@
        file_put_contents($filename, " ");
        // البيانات التي تريد حفظها
       //  $data = "Latitude: $latitude, Longitude: $longitude";
-       $data1 = "##The students are here now\n";
+       $data1 = "#The students are here now\n";
        $data2 = "https://www.google.com/maps?q={$latitude},{$longitude}\n";
    
        file_put_contents($filename, $data1, FILE_APPEND); // FILE_APPEND يُضيف البيانات إلى الملف بدلاً من استبداله
